@@ -1,8 +1,7 @@
 import os
 
 import uvicorn as uvicorn
-from fastapi import FastAPI, HTTPException
-from urllib.parse import unquote
+from fastapi import FastAPI, HTTPException, Response
 
 import requests
 
@@ -27,7 +26,8 @@ async def get_conversion(country: str, number: float):
     if not resp.ok:
         raise HTTPException(status_code=resp.status_code, detail=resp.text)
     try:
-        return str(round(float(resp.json()[f'{currency}_EUR'])*number, 2))
+        return Response(content=(str(round(float(resp.json()[f'{currency}_EUR'])*number, 2))+'€'), media_type="text"
+                                                                                                              "/plain")
     except Exception as e:
         raise HTTPException(status_code=500, detail=e)
 
