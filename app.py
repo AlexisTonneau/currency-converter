@@ -13,8 +13,7 @@ countries = requests.get(
 
 
 @app.get('/')
-async def get_conversion(country: str, number: float):
-    print(country)
+async def get_conversion(country: str, number: float, native_currency: str = 'EUR'):
     currency = None
     for ctr in countries:
         if ctr['country'] == country:
@@ -22,11 +21,11 @@ async def get_conversion(country: str, number: float):
     if not currency:
         raise HTTPException(status_code=400, detail='Country not found')
 
-    resp = requests.get(f'https://free.currconv.com/api/v7/convert?q={currency}_EUR&apiKey={api_key}&compact=ultra')
+    resp = requests.get(f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key}&compact=ultra')
     if not resp.ok:
         raise HTTPException(status_code=resp.status_code, detail=resp.text)
     try:
-        return Response(content=(str(round(float(resp.json()[f'{currency}_EUR'])*number, 2))+'€'), media_type="text"
+        return Response(content=str(round(float(resp.json()[f'{currency}_{native_currency}'])*number, 2)), media_type="text"
                                                                                                               "/plain")
     except Exception as e:
         raise HTTPException(status_code=500, detail=e)
