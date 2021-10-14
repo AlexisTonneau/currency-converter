@@ -19,6 +19,7 @@ for ctr in countries:
 
 @app.get('/')
 async def get_conversion(country: str, number: float, native_currency: str = 'EUR'):
+    native_currency = native_currency.upper()
     currency = None
     for ctr in countries:
         if ctr['country'] == country:
