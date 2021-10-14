@@ -31,5 +31,5 @@ jobs:
           ssh-private-key: ${{ secrets.PRIVATE_KEY }}
       - name: Update and recreate Docker containers
         run: |
-          ssh  ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }} "echo ${{ secrets.SECRET }}| sudo -S bash /home/atonneau/web-services/docker-utilities/docker-images-update.sh"
+          ssh -vvv ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }} "echo ${{ secrets.SECRET }}| sudo -S bash /home/atonneau/web-services/docker-utilities/docker-images-update.sh"
           ssh  ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }} "echo ${{ secrets.SECRET }}| sudo -S docker-compose -f /home/atonneau/web-services/docker-compose.yml up -d"
