@@ -32,7 +32,7 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
         if ctr['country'] == country:
             currency = ctr['currency_code']
     if not currency:
-        raise HTTPException(status_code=400, detail='Country not found')
+        return Response(media_type="text/plain", content=f"{country} not recognized")
 
     resp = requests.get(
         f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key}&compact=ultra')

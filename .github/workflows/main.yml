@@ -22,14 +22,3 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/currency-converter:latest
-  update-running-insance:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
-      - name: Update and recreate Docker containers
-        run: |
-          ssh -vvv ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }} "echo ${{ secrets.SECRET }}| sudo -S bash /home/atonneau/web-services/docker-utilities/docker-images-update.sh"
-          ssh  ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER }} "echo ${{ secrets.SECRET }}| sudo -S docker-compose -f /home/atonneau/web-services/docker-compose.yml up -d"
