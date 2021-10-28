@@ -16,10 +16,17 @@ for ctr in countries:
     if ctr['country'] == 'France':
         assert ctr['currency_code'] == 'EUR'
 
+currencies = []
+
+for ctr in countries:
+    currencies.append(ctr['currency_code'])
+
 
 @app.get('/')
 async def get_conversion(country: str, number: float, native_currency: str = 'EUR'):
     native_currency = native_currency.upper()
+    if native_currency not in currencies:
+        return Response(media_type="text/plain", content=f"{native_currency} not recognized")
     currency = None
     for ctr in countries:
         if ctr['country'] == country:
