@@ -8,7 +8,10 @@ import requests
 
 app = FastAPI()
 
-api_key = os.getenv('API_KEY')
+api_key_currconv = os.getenv('API_KEY_CURRCONV')
+api_key_freecurrency = os.getenv('API_KEY_FREECURRENCY')
+
+
 with open('country-by-currency-code.json') as f:
     countries = json.load(f)
 
@@ -37,12 +40,8 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
     if not currency:
         return Response(media_type="text/plain", content=f"{country} not recognized")
 
-    resp = requests.get(
-        f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key}&compact=ultra')
-    if not resp.ok:
-        raise HTTPException(status_code=resp.status_code, detail=resp.text)
     try:
-        return Response(content=str(round(float(resp.json()[f'{currency}_{native_currency}']) * number, 2)),
+        return Response(content=str(get_rates(currency, native_currency, number)),
                         media_type="text"
                                    "/plain")
     except Exception as e:
@@ -61,17 +60,25 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
     if not currency:
         return Response(media_type="text/plain", content=f"{country} not recognized")
 
-    resp = requests.get(
-        f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key}&compact=ultra')
-    if not resp.ok:
-        raise HTTPException(status_code=resp.status_code, detail=resp.text)
     try:
-        return Response(content=str(round(float(resp.json()[f'{currency}_{native_currency}']) * number, 2)) +
+        return Response(content=str(get_rates(currency, native_currency, number)) +
                                 complete_curr[native_currency]['symbol_native'],
                         media_type="text"
                                    "/plain")
     except Exception as e:
         raise HTTPException(status_code=500, detail=e)
+
+
+def get_rates(currency, native_currency, number):
+    resp = requests.get(
+        f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key_currconv}&compact=ultra')
+    if not resp.ok:
+        resp = requests.get(f'https://freecurrencyapi.net/api/v2/latest?apiKey={api_key_freecurrency}&base_currency={native_currency}')
+        if not resp.ok:
+            raise HTTPException(status_code=resp.status_code, detail=resp.text)
+        return round(float(resp.json()['data'][currency]) * number, 2)
+    else:
+        return round(float(resp.json()[f'{currency}_{native_currency}']) * number, 2)
 
 
 if __name__ == "__main__":
