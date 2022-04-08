@@ -220,6 +220,11 @@
         "currency_code": "CZK"
     },
     {
+        "country": "République tchèque",
+        "currency_code": "CZK"
+    },
+    
+    {
         "country": "Denmark",
         "currency_code": "DKK"
     },
