@@ -59,6 +59,8 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
             currency = ctr['currency_code']
     if not currency:
         return Response(media_type="text/plain", content=f"{country} not recognized")
+    
+    print(get_rates(currency, native_currency, number))
 
     try:
         return Response(content=str(get_rates(currency, native_currency, number)) +
@@ -76,9 +78,11 @@ def get_rates(currency, native_currency, number):
         resp = requests.get(f'https://freecurrencyapi.net/api/v2/latest?apiKey={api_key_freecurrency}&base_currency={native_currency}')
         if not resp.ok:
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
-        return round(float(resp.json()['data'][currency]) * number, 2)
+        print(resp.json())
+        print(resp.json()['data'][currency])
+        return round(number / float(resp.json()['data'][currency]), 2)
     else:
-        return round(float(resp.json()[f'{currency}_{native_currency}']) * number, 2)
+        return round(number / float(resp.json()[f'{currency}_{native_currency}']) * number, 2)
 
 
 if __name__ == "__main__":
