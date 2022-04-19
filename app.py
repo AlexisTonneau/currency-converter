@@ -11,7 +11,6 @@ app = FastAPI()
 api_key_currconv = os.getenv('API_KEY_CURRCONV')
 api_key_freecurrency = os.getenv('API_KEY_FREECURRENCY')
 
-
 with open('country-by-currency-code.json') as f:
     countries = json.load(f)
 
@@ -59,7 +58,7 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
             currency = ctr['currency_code']
     if not currency:
         return Response(media_type="text/plain", content=f"{country} not recognized")
-    
+
     print(get_rates(currency, native_currency, number))
 
     try:
@@ -75,11 +74,11 @@ def get_rates(currency, native_currency, number):
     resp = requests.get(
         f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key_currconv}&compact=ultra')
     if not resp.ok:
-        resp = requests.get(f'https://freecurrencyapi.net/api/v2/latest?apiKey={api_key_freecurrency}&base_currency={native_currency}')
+        print("currconv failed")
+        resp = requests.get(
+            f'https://freecurrencyapi.net/api/v2/latest?apiKey={api_key_freecurrency}&base_currency={native_currency}')
         if not resp.ok:
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
-        print(resp.json())
-        print(resp.json()['data'][currency])
         return round(number / float(resp.json()['data'][currency]), 2)
     else:
         return round(number / float(resp.json()[f'{currency}_{native_currency}']) * number, 2)

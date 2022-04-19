@@ -8,7 +8,15 @@
         "currency_code": "ALL"
     },
     {
+        "country": "Albanie",
+        "currency_code": "ALL"
+    },
+    {
         "country": "Algeria",
+        "currency_code": "DZD"
+    },
+    {
+        "country": "Algérie",
         "currency_code": "DZD"
     },
     {
@@ -17,6 +25,10 @@
     },
     {
         "country": "Andorra",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Andorre",
         "currency_code": "EUR"
     },
     {
@@ -40,7 +52,15 @@
         "currency_code": "ARS"
     },
     {
+        "country": "Argentine",
+        "currency_code": "ARS"
+    },
+    {
         "country": "Armenia",
+        "currency_code": "AMD"
+    },
+    {
+        "country": "Arménie",
         "currency_code": "AMD"
     },
     {
@@ -52,7 +72,15 @@
         "currency_code": "AUD"
     },
     {
+        "country": "Australie",
+        "currency_code": "AUD"
+    },
+    {
         "country": "Austria",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Autriche",
         "currency_code": "EUR"
     },
     {
@@ -80,7 +108,15 @@
         "currency_code": "BYR"
     },
     {
+        "country": "Biélorussie",
+        "currency_code": "BYR"
+    },
+    {
         "country": "Belgium",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Belgique",
         "currency_code": "EUR"
     },
     {
@@ -89,6 +125,10 @@
     },
     {
         "country": "Benin",
+        "currency_code": "XOF"
+    },
+    {
+        "country": "Bénin",
         "currency_code": "XOF"
     },
     {
@@ -104,7 +144,15 @@
         "currency_code": "BOB"
     },
     {
+        "country": "Bolivie",
+        "currency_code": "BOB"
+    },
+    {
         "country": "Bosnia and Herzegovina",
+        "currency_code": "BAM"
+    },
+    {
+        "country": "Bosnie-Herzégovine",
         "currency_code": "BAM"
     },
     {
@@ -120,6 +168,10 @@
         "currency_code": "BRL"
     },
     {
+        "country": "Brésil",
+        "currency_code": "BRL"
+    },
+    {
         "country": "British Indian Ocean Territory",
         "currency_code": "USD"
     },
@@ -129,6 +181,10 @@
     },
     {
         "country": "Bulgaria",
+        "currency_code": "BGN"
+    },
+    {
+        "country": "Bulgarie",
         "currency_code": "BGN"
     },
     {
@@ -144,7 +200,15 @@
         "currency_code": "KHR"
     },
     {
+        "country": "Cambodge",
+        "currency_code": "KHR"
+    },
+    {
         "country": "Cameroon",
+        "currency_code": "XAF"
+    },
+    {
+        "country": "Cameroun",
         "currency_code": "XAF"
     },
     {
@@ -156,6 +220,10 @@
         "currency_code": "CVE"
     },
     {
+        "country": "Cap Vert",
+        "currency_code": "CVE"
+    },
+    {
         "country": "Cayman Islands",
         "currency_code": "KYD"
     },
@@ -164,7 +232,15 @@
         "currency_code": "XAF"
     },
     {
+        "country": "République Centrafricaine",
+        "currency_code": "XAF"
+    },
+    {
         "country": "Chad",
+        "currency_code": "XAF"
+    },
+    {
+        "country": "Tchad",
         "currency_code": "XAF"
     },
     {
@@ -172,7 +248,15 @@
         "currency_code": "CLP"
     },
     {
+        "country": "Chili",
+        "currency_code": "CLP"
+    },
+    {
         "country": "China",
+        "currency_code": "CNY"
+    },
+    {
+        "country": "Chine",
         "currency_code": "CNY"
     },
     {
@@ -188,7 +272,15 @@
         "currency_code": "COP"
     },
     {
+        "country": "Colombie",
+        "currency_code": "COP"
+    },
+    {
         "country": "Comoros",
+        "currency_code": "KMF"
+    },
+    {
+        "country": "Comores",
         "currency_code": "KMF"
     },
     {
@@ -208,11 +300,19 @@
         "currency_code": "HRK"
     },
     {
+        "country": "Croatie",
+        "currency_code": "HRK"
+    },
+    {
         "country": "Cuba",
         "currency_code": "CUP"
     },
     {
         "country": "Cyprus",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Chypre",
         "currency_code": "EUR"
     },
     {
@@ -223,9 +323,16 @@
         "country": "République tchèque",
         "currency_code": "CZK"
     },
-    
+    {
+        "country": "République Tchèque",
+        "currency_code": "CZK"
+    },
     {
         "country": "Denmark",
+        "currency_code": "DKK"
+    },
+    {
+        "country": "Danemark",
         "currency_code": "DKK"
     },
     {
@@ -241,6 +348,10 @@
         "currency_code": "DOP"
     },
     {
+        "country": "République Dominicaine",
+        "currency_code": "DOP"
+    },
+    {
         "country": "East Timor",
         "currency_code": "USD"
     },
@@ -249,7 +360,15 @@
         "currency_code": "ECS"
     },
     {
+        "country": "Équateur",
+        "currency_code": "ECS"
+    },
+    {
         "country": "Egypt",
+        "currency_code": "EGP"
+    },
+    {
+        "country": "Égypte",
         "currency_code": "EGP"
     },
     {
@@ -261,7 +380,15 @@
         "currency_code": "GBP"
     },
     {
+        "country": "Angleterre",
+        "currency_code": "GBP"
+    },
+    {
         "country": "Equatorial Guinea",
+        "currency_code": "XAF"
+    },
+    {
+        "country": "Guinée Équatoriale",
         "currency_code": "XAF"
     },
     {
@@ -269,8 +396,20 @@
         "currency_code": "ERN"
     },
     {
+        "country": "Érythrée",
+        "currency_code": "ERN"
+    },
+    {
         "country": "Estonia",
         "currency_code": "EUR"
+    },
+    {
+        "country": "Estonie",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Éthiopie",
+        "currency_code": "ETB"
     },
     {
         "country": "Ethiopia",
@@ -285,11 +424,19 @@
         "currency_code": "DKK"
     },
     {
+        "country": "Iles Féroé",
+        "currency_code": "DKK"
+    },
+    {
         "country": "Fiji Islands",
         "currency_code": "FJD"
     },
     {
         "country": "Finland",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Finlande",
         "currency_code": "EUR"
     },
     {
@@ -317,7 +464,15 @@
         "currency_code": "GMD"
     },
     {
+        "country": "Gambie",
+        "currency_code": "GMD"
+    },
+    {
         "country": "Georgia",
+        "currency_code": "GEL"
+    },
+    {
+        "country": "Géorgie",
         "currency_code": "GEL"
     },
     {
@@ -341,6 +496,10 @@
         "currency_code": "DKK"
     },
     {
+        "country": "Groenland",
+        "currency_code": "DKK"
+    },
+    {
         "country": "Grenada",
         "currency_code": "XCD"
     },
@@ -361,7 +520,15 @@
         "currency_code": "GNF"
     },
     {
+        "country": "Guinée",
+        "currency_code": "GNF"
+    },
+    {
         "country": "Guinea-Bissau",
+        "currency_code": "CFA"
+    },
+    {
+        "country": "Guinée-Bissau",
         "currency_code": "CFA"
     },
     {
@@ -393,7 +560,15 @@
         "currency_code": "HUF"
     },
     {
+        "country": "Hongrie",
+        "currency_code": "HUF"
+    },
+    {
         "country": "Iceland",
+        "currency_code": "ISK"
+    },
+    {
+        "country": "Islande",
         "currency_code": "ISK"
     },
     {
@@ -401,7 +576,15 @@
         "currency_code": "INR"
     },
     {
+        "country": "Inde",
+        "currency_code": "INR"
+    },
+    {
         "country": "Indonesia",
+        "currency_code": "IDR"
+    },
+    {
+        "country": "Indonésie",
         "currency_code": "IDR"
     },
     {
@@ -413,11 +596,19 @@
         "currency_code": "IQD"
     },
     {
+        "country": "Irak",
+        "currency_code": "IQD"
+    },
+    {
         "country": "Ireland",
         "currency_code": "EUR"
     },
     {
         "country": "Israel",
+        "currency_code": "ILS"
+    },
+    {
+        "country": "Israël",
         "currency_code": "ILS"
     },
     {
@@ -429,7 +620,15 @@
         "currency_code": "XOF"
     },
     {
+        "country": "Côte d'Ivoire",
+        "currency_code": "XOF"
+    },
+    {
         "country": "Jamaica",
+        "currency_code": "JMD"
+    },
+    {
+        "country": "Jamaïque",
         "currency_code": "JMD"
     },
     {
@@ -437,7 +636,15 @@
         "currency_code": "JPY"
     },
     {
+        "country": "Japon",
+        "currency_code": "JPY"
+    },
+    {
         "country": "Jordan",
+        "currency_code": "JOD"
+    },
+    {
+        "country": "Jordanie",
         "currency_code": "JOD"
     },
     {
@@ -469,7 +676,15 @@
         "currency_code": "LVL"
     },
     {
+        "country": "Lettonie",
+        "currency_code": "LVL"
+    },
+    {
         "country": "Lebanon",
+        "currency_code": "LBP"
+    },
+    {
+        "country": "Liban",
         "currency_code": "LBP"
     },
     {
@@ -493,6 +708,10 @@
         "currency_code": "LTL"
     },
     {
+        "country": "Lituanie",
+        "currency_code": "LTL"
+    },
+    {
         "country": "Luxembourg",
         "currency_code": "EUR"
     },
@@ -505,6 +724,10 @@
         "currency_code": "MKD"
     },
     {
+        "country": "Macédoine du Nord",
+        "currency_code": "MKD"
+    },
+    {
         "country": "Madagascar",
         "currency_code": "MGF"
     },
@@ -514,6 +737,10 @@
     },
     {
         "country": "Malaysia",
+        "currency_code": "MYR"
+    },
+    {
+        "country": "Malaisie",
         "currency_code": "MYR"
     },
     {
@@ -569,11 +796,19 @@
         "currency_code": "MNT"
     },
     {
+        "country": "Mongolie",
+        "currency_code": "MNT"
+    },
+    {
         "country": "Montserrat",
         "currency_code": "XCD"
     },
     {
         "country": "Morocco",
+        "currency_code": "MAD"
+    },
+    {
+        "country": "Maroc",
         "currency_code": "MAD"
     },
     {
@@ -641,11 +876,19 @@
         "currency_code": "GBP"
     },
     {
+        "country": "Irelande du Nord",
+        "currency_code": "GBP"
+    },
+    {
         "country": "Northern Mariana Islands",
         "currency_code": "USD"
     },
     {
         "country": "Norway",
+        "currency_code": "NOK"
+    },
+    {
+        "country": "Norvège",
         "currency_code": "NOK"
     },
     {
@@ -681,6 +924,10 @@
         "currency_code": "PEN"
     },
     {
+        "country": "Pérou",
+        "currency_code": "PEN"
+    },
+    {
         "country": "Philippines",
         "currency_code": "PHP"
     },
@@ -690,6 +937,10 @@
     },
     {
         "country": "Poland",
+        "currency_code": "PLN"
+    },
+    {
+        "country": "Pologne",
         "currency_code": "PLN"
     },
     {
@@ -761,11 +1012,23 @@
         "currency_code": "GBP"
     },
     {
+        "country": "Écosse",
+        "currency_code": "GBP"
+    },
+    {
         "country": "Senegal",
         "currency_code": "XOF"
     },
     {
+        "country": "Sénégal",
+        "currency_code": "XOF"
+    },
+    {
         "country": "Serbia",
+        "currency_code": "RSD"
+    },
+    {
+        "country": "Serbie",
         "currency_code": "RSD"
     },
     {
@@ -781,11 +1044,23 @@
         "currency_code": "SGD"
     },
     {
+        "country": "Singapour",
+        "currency_code": "SGD"
+    },
+    {
         "country": "Slovakia",
         "currency_code": "EUR"
     },
     {
+        "country": "Slovaquie",
+        "currency_code": "EUR"
+    },
+    {
         "country": "Slovenia",
+        "currency_code": "EUR"
+    },
+    {
+        "country": "Slovénie",
         "currency_code": "EUR"
     },
     {
@@ -797,7 +1072,15 @@
         "currency_code": "SOS"
     },
     {
+        "country": "Somalie",
+        "currency_code": "SOS"
+    },
+    {
         "country": "South Africa",
+        "currency_code": "ZAR"
+    },
+    {
+        "country": "Afrique du Sud",
         "currency_code": "ZAR"
     },
     {
@@ -806,6 +1089,10 @@
     },
     {
         "country": "South Korea",
+        "currency_code": "KRW"
+    },
+    {
+        "country": "Corée du Sud",
         "currency_code": "KRW"
     },
     {
@@ -841,7 +1128,15 @@
         "currency_code": "SEK"
     },
     {
+        "country": "Suède",
+        "currency_code": "SEK"
+    },
+    {
         "country": "Switzerland",
+        "currency_code": "CHF"
+    },
+    {
+        "country": "Suisse",
         "currency_code": "CHF"
     },
     {
@@ -857,7 +1152,15 @@
         "currency_code": "TZS"
     },
     {
+        "country": "Tanzanie",
+        "currency_code": "TZS"
+    },
+    {
         "country": "Thailand",
+        "currency_code": "THB"
+    },
+    {
+        "country": "Thaïlande",
         "currency_code": "THB"
     },
     {
@@ -885,7 +1188,15 @@
         "currency_code": "TND"
     },
     {
+        "country": "Tunisie",
+        "currency_code": "TND"
+    },
+    {
         "country": "Turkey",
+        "currency_code": "TRY"
+    },
+    {
+        "country": "Turquie",
         "currency_code": "TRY"
     },
     {
@@ -913,11 +1224,23 @@
         "currency_code": "AED"
     },
     {
+        "country": "Émirats Arabes Unis",
+        "currency_code": "AED"
+    },
+    {
         "country": "United Kingdom",
         "currency_code": "GBP"
     },
     {
+        "country": "Royaume-Uni",
+        "currency_code": "GBP"
+    },
+    {
         "country": "United States",
+        "currency_code": "USD"
+    },
+    {
+        "country": "États-Unis",
         "currency_code": "USD"
     },
     {
@@ -954,6 +1277,10 @@
     },
     {
         "country": "Wales",
+        "currency_code": "GBP"
+    },
+    {
+        "country": "Pays-de-Galles",
         "currency_code": "GBP"
     },
     {
