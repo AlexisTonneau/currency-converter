@@ -1,6 +1,7 @@
 import json
 import os
 
+import requests_cache
 import uvicorn as uvicorn
 from fastapi import FastAPI, HTTPException, Response
 
@@ -10,6 +11,9 @@ app = FastAPI()
 
 api_key_currconv = os.getenv('API_KEY_CURRCONV')
 api_key_freecurrency = os.getenv('API_KEY_FREECURRENCY')
+
+requests_cache.install_cache('currency_cache', backend='sqlite', expire_after=60 * 60 * 24)
+
 
 with open('country-by-currency-code.json') as f:
     countries = json.load(f)
@@ -81,7 +85,7 @@ def get_rates(currency, native_currency, number):
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
         return round(number / float(resp.json()['data'][currency]), 2)
     else:
-        return round(number / float(resp.json()[f'{currency}_{native_currency}']) * number, 2)
+        return round(number / float(resp.json()[f'{currency}_{native_currency}']), 2)
 
 
 if __name__ == "__main__":
