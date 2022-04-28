@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import time
 import shutil
 
@@ -20,7 +21,6 @@ api_key_freecurrency = os.getenv('API_KEY_FREECURRENCY')
 
 requests_cache.install_cache('currency_cache', backend='sqlite', expire_after=60 * 60 * 24)
 
-
 with open('country-by-currency-code.json') as f:
     countries = json.load(f)
 
@@ -35,26 +35,6 @@ currencies = []
 
 for ctr in countries:
     currencies.append(ctr['currency_code'])
-
-
-@app.get('/')
-async def get_conversion(country: str, number: float, native_currency: str = 'EUR'):
-    native_currency = native_currency.upper()
-    if native_currency not in currencies:
-        return Response(media_type="text/plain", content=f"{native_currency} not recognized")
-    currency = None
-    for ctr in countries:
-        if ctr['country'] == country:
-            currency = ctr['currency_code']
-    if not currency:
-        return Response(media_type="text/plain", content=f"{country} not recognized")
-
-    try:
-        return Response(content=str(get_rates(currency, native_currency, number)),
-                        media_type="text"
-                                   "/plain")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=e)
 
 
 @app.get('/1.4')
@@ -82,12 +62,20 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
 
 @app.get("/insta/{insta_profile}")
 async def root(insta_profile: str, background_tasks: BackgroundTasks):
-    ig.download_profile(insta_profile, profile_pic_only=True)
+    insta_profile = insta_profile.strip()
+    if not re.match("^[\w](?!.*?\.{2})[\w.]{1,28}[\w]$", insta_profile):
+        raise HTTPException(400, "Invalid username")
+    try:
+        ig.download_profile(insta_profile, profile_pic_only=True)
+    except Exception:
+        raise HTTPException(400, "Profile not found")
     path = f"./insta/{insta_profile}/"
     final_path = None
     for file in os.listdir(path):
         if file.endswith(".jpg"):
             final_path = os.path.join(path, file)
+    if not final_path:
+        raise HTTPException(400, "Picture not found")
     background_tasks.add_task(delete_folder, path)
     return FileResponse(final_path)
 
