@@ -1,13 +1,19 @@
 import json
 import os
+import time
+import shutil
 
 import requests_cache
+import instaloader
 import uvicorn as uvicorn
 from fastapi import FastAPI, HTTPException, Response
 
 import requests
+from starlette.background import BackgroundTasks
+from starlette.responses import FileResponse
 
 app = FastAPI()
+ig = instaloader.Instaloader(dirname_pattern="./insta/{target}")
 
 api_key_currconv = os.getenv('API_KEY_CURRCONV')
 api_key_freecurrency = os.getenv('API_KEY_FREECURRENCY')
@@ -74,6 +80,18 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
         raise HTTPException(status_code=500, detail=e)
 
 
+@app.get("/insta/{insta_profile}")
+async def root(insta_profile: str, background_tasks: BackgroundTasks):
+    ig.download_profile(insta_profile, profile_pic_only=True)
+    path = f"./insta/{insta_profile}/"
+    final_path = None
+    for file in os.listdir(path):
+        if file.endswith(".jpg"):
+            final_path = os.path.join(path, file)
+    background_tasks.add_task(delete_folder, path)
+    return FileResponse(final_path)
+
+
 def get_rates(currency, native_currency, number):
     resp = requests.get(
         f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key_currconv}&compact=ultra')
@@ -86,6 +104,12 @@ def get_rates(currency, native_currency, number):
         return round(number / float(resp.json()['data'][currency]), 2)
     else:
         return round(number / float(resp.json()[f'{currency}_{native_currency}']), 2)
+
+
+def delete_folder(path):
+    time.sleep(4)
+    if os.path.exists(path):
+        shutil.rmtree(path)
 
 
 if __name__ == "__main__":
