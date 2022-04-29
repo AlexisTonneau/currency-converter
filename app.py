@@ -62,7 +62,7 @@ async def get_conversion(country: str, number: float, native_currency: str = 'EU
 
 @app.get("/insta/{insta_profile}")
 async def root(insta_profile: str, background_tasks: BackgroundTasks):
-    insta_profile = insta_profile.strip()
+    insta_profile = insta_profile.strip().lower()
     if not re.match("^[\w](?!.*?\.{2})[\w.]{1,28}[\w]$", insta_profile):
         raise HTTPException(400, "Invalid username")
     try:
