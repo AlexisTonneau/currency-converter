@@ -1,4 +1,4 @@
-Web API to automate currency conversion using location with iOS Shortcuts. SHortcut available [here](https://routinehub.co/shortcut/10315/)
+Web API to automate currency conversion using location with iOS Shortcuts. Shortcut available [here](https://routinehub.co/shortcut/10315/)
 
 
 
