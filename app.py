@@ -83,7 +83,7 @@ async def root(insta_profile: str, background_tasks: BackgroundTasks):
 def get_rates(currency, native_currency, number):
     resp = requests.get(
         f'https://free.currconv.com/api/v7/convert?q={currency}_{native_currency}&apiKey={api_key_currconv}&compact=ultra')
-    if not resp.ok:
+    if True:
         print("currconv failed")
         resp = requests.get(
             f'https://freecurrencyapi.net/api/v2/latest?apiKey={api_key_freecurrency}&base_currency={native_currency}')
@@ -91,7 +91,8 @@ def get_rates(currency, native_currency, number):
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
         return round(number / float(resp.json()['data'][currency]), 2)
     else:
-        return round( float(resp.json()[f'{currency}_{native_currency}']) / number, 2)
+        print(resp)
+        return round(float(resp.json()[f'{currency}_{native_currency}']) / number, 2)
 
 
 def delete_folder(path):
