@@ -91,7 +91,7 @@ def get_rates(currency, native_currency, number):
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
         return round(number / float(resp.json()['data'][currency]), 2)
     else:
-        return round(number / float(resp.json()[f'{currency}_{native_currency}']), 2)
+        return round( float(resp.json()[f'{currency}_{native_currency}']) / number, 2)
 
 
 def delete_folder(path):
