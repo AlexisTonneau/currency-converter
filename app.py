@@ -7,6 +7,7 @@ import shutil
 import requests_cache
 import instaloader
 import uvicorn as uvicorn
+from uvicorn.config import LOGGING_CONFIG
 from fastapi import FastAPI, HTTPException, Response
 
 import requests
@@ -102,4 +103,5 @@ def delete_folder(path):
 
 
 if __name__ == "__main__":
+    LOGGING_CONFIG["formatters"]["default"]["fmt"] = "%(asctime)s [%(name)s] %(levelprefix)s %(message)s"
     uvicorn.run(app, host="0.0.0.0", port=os.getenv('PORT') or 9000)
