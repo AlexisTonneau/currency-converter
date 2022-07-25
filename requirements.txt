@@ -14,4 +14,4 @@ typing-extensions==3.10.0.2
 urllib3==1.26.7
 uvicorn==0.15.0
 requests-cache
-instaloader==4.9
+instaloader==4.9.2

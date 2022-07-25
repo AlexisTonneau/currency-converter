@@ -68,7 +68,8 @@ async def root(insta_profile: str, background_tasks: BackgroundTasks):
         raise HTTPException(400, "Invalid username")
     try:
         ig.download_profile(insta_profile, profile_pic_only=True)
-    except Exception:
+    except Exception as e:
+        print(e)
         raise HTTPException(400, "Profile not found")
     path = f"./insta/{insta_profile}/"
     final_path = None
